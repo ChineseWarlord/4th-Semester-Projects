@@ -1,3 +1,5 @@
+#ifndef TEMP_SENSOR_STUB
+#define TEMP_SENSOR_STUB
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -25,3 +27,4 @@ void* TempGen(void* arg){
 
     return result;
 }
+#endif

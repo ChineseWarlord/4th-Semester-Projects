@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
-#include "TempSensorStub.c"
 #include <time.h>
+#include "TempSensorStub.h"
 
 char curr_time[21];
 
@@ -22,12 +22,13 @@ void* WriteFile(void* arg){
     data= *(float*)arg;
     fprintf(fp,"%s %0.1f C\n", format_time(), data);
     fclose(fp);
+    return 0;
 }
 
 int main() {
     pthread_t T1, T2;
     float Avg, *result;
-    int Timer = 30; //Antal sek der skal genereres data
+    int Timer = 5; //Antal sek der skal genereres data
     
     for (int i = 0; i < Timer; i++){
         pthread_create(&T1, NULL, TempGen, &Avg);
@@ -38,6 +39,5 @@ int main() {
         int sleep = usleep(1000000);
     }
     pthread_exit(NULL);
-
     exit(0);
 }
