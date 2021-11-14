@@ -9,6 +9,6 @@ TempSensorStub.o: TempSensorStub.c TempSensorStub.h
 	gcc -c TempSensorStub.c 
 	
 clean:
-	rm *.o RunProgram.exe
+	rm *.o RunProgram
 	@echo "clean completed"
 
