@@ -1,3 +1,0 @@
-SSFS
-
-"Simple Stupid FileSystem"
