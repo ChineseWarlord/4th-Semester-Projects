@@ -2,7 +2,8 @@
 all: RunClient StartServer
 
 RunClient: ClientTemp.o  TempSensorStub.o 
-	gcc -pthread ClientTemp.o TempSensorStub.o -o RunClient
+	gcc -pthread `pkg-config --cflags libconfig` ClientTemp.o \
+    `pkg-config --libs libconfig` TempSensorStub.o -o RunClient
 
 StartServer: ServerTest2.o
 	gcc -pthread ServerTest2.o -o StartServer

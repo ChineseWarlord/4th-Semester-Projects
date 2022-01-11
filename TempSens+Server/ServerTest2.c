@@ -24,9 +24,9 @@ void* WriteFile(void* arg){
     FILE *fp;  
 	char *data = arg;
 
-    //fp = fopen("/home/simon/WorkshopFolder/TempSens+Server/Data.txt","a+");
+    fp = fopen("/home/simon/Documents/ParsingOS/TempSens+Server/Data.txt","a+");
     //fp = fopen("/home/simon/WorkshopFolder/SSFS/TEST_mount/Data.txt","a+");
-    fp = fopen("/home/simon/WorkshopFolder/WorkshopFolder/FileSys/MountPoint/Data.txt","a");
+    //fp = fopen("/home/simon/WorkshopFolder/WorkshopFolder/FileSys/MountPoint/Data.txt","a");
 
     fprintf(fp,"%s %s C\n", format_time(), data);
     fclose(fp); 
